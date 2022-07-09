@@ -98,7 +98,7 @@ def valid_augmentation():
     :return: augmentation pipeline for validation data augmentation
     """
     return A.Compose([
-        A.HorizontalFlip(0.5),
+        #A.HorizontalFlip(0.5),
         ToTensorV2(p=1.0),
     ], bbox_params={
         'format': 'pascal_voc',
