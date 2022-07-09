@@ -52,7 +52,7 @@ def train(train_dataloader, model):
         # Summing the losses for all the element in the batch
         losses = sum(loss for loss in loss_dict.values())
         loss_value = losses.item()
-        train_loss_list.append(loss_value)
+        train_iter_loss_list.append(loss_value)
 
         train_loss_hist.send(loss_value)
 
