@@ -1,8 +1,8 @@
 import torch
 
 """ DATASET HYPER PARAMETERS """
-TRAIN_DIR = 'data/Traffic-Light-Detector-2/train'
-VALID_DIR = 'data/Traffic-Light-Detector-2/valid'
+TRAIN_DIR = 'data/train'
+VALID_DIR = 'data/valid'
 CLASSES = [
     '__background__', 'Unk',
     'Red Car', 'Red Ped',
