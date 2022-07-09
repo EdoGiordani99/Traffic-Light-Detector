@@ -84,8 +84,8 @@ def train_augmentation():
     :return: augmentation pipeline for training data augmentation
     """
     return A.Compose([
-        A.HorizontalFlip(0.5),                  # it doesn't make sense to have a vertical flip,
-        A.MedianBlur(blur_limit=1, p=0.1),      # we generally don't see upside down lights.
+        #A.HorizontalFlip(0.5),                  # it doesn't make sense to have a vertical flip,
+        #A.MedianBlur(blur_limit=1, p=0.1),      # we generally don't see upside down lights.
         ToTensorV2(p=1.0),
     ], bbox_params={
         'format': 'pascal_voc',
