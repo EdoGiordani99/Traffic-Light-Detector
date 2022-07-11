@@ -13,7 +13,8 @@ from dataset import (
 
 from config import (
     DEVICE, NUM_CLASSES, NUM_EPOCHS, OUT_DIR, MODEL_NAME,
-    NUM_WORKERS, PRETRAINED
+    NUM_WORKERS, PRETRAINED, 
+    LEARNING_RATE, MOMENTUM, WEIGHT_DECAY
 )
 
 plt.style.use('ggplot')
@@ -125,8 +126,21 @@ if __name__ == '__main__':
 
     params = [p for p in model.parameters() if p.requires_grad]
 
-    optimizer = torch.optim.SGD(params, lr=0.001, momentum=0.9, weight_decay=0.0005)
-
+    
+    # Setting the optimizer
+    if OPTIM == 'SGD': 
+        optimizer = torch.optim.SGD(params, 
+                                    lr=LEARNING_RATE, 
+                                    momentum=MOMENTUM, 
+                                    weight_decay=WEIGHT_DECAY)
+    if OPTIM == 'Adam': 
+        optimizer = torch.optim.Adam(params, 
+                                    lr=LEARNING_RATE, 
+                                    momentum=MOMENTUM, 
+                                    weight_decay=WEIGHT_DECAY)
+    else: 
+        raise ValueError('Optimizer Name is not valid. Please use "SGD" or "Adam"')
+        
     # Train / Val histories for epochs!
     train_loss_hist = Averager()
     val_loss_hist = Averager()
