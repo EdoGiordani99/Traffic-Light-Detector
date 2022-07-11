@@ -24,6 +24,12 @@ RESIZE_TO = 416
 NUM_EPOCHS = 10
 NUM_WORKERS = 4
 
+# lr=0.001, momentum=0.9, weight_decay=0.0005
+LEARNING_RATE = 0.001
+MOMENTUM = 0.9
+WEIGHT_DECAY = 0.0005
+OPTIM = 'SGD'
+
 
 """ DEVICE """
 if torch.cuda.is_available():
