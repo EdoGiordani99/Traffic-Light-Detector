@@ -14,7 +14,7 @@ from dataset import (
 from config import (
     DEVICE, NUM_CLASSES, NUM_EPOCHS, OUT_DIR, MODEL_NAME,
     NUM_WORKERS, PRETRAINED, 
-    LEARNING_RATE, MOMENTUM, WEIGHT_DECAY
+    LEARNING_RATE, MOMENTUM, WEIGHT_DECAY, OPTIM
 )
 
 plt.style.use('ggplot')
