@@ -133,11 +133,12 @@ if __name__ == '__main__':
                                     lr=LEARNING_RATE, 
                                     momentum=MOMENTUM, 
                                     weight_decay=WEIGHT_DECAY)
-    if OPTIM == 'Adam': 
+        print('Setting the SDG optimizer')
+    elif OPTIM == 'Adam': 
         optimizer = torch.optim.Adam(params, 
-                                    lr=LEARNING_RATE, 
-                                    momentum=MOMENTUM, 
+                                    lr=LEARNING_RATE,  
                                     weight_decay=WEIGHT_DECAY)
+        print('Setting the Adam optimizer')
     else: 
         raise ValueError('Optimizer Name is not valid. Please use "SGD" or "Adam"')
         
