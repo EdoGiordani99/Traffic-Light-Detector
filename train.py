@@ -1,5 +1,6 @@
 import time
 import torch
+import pickle
 from tqdm.auto import tqdm
 import matplotlib.pyplot as plt
 
@@ -156,6 +157,9 @@ if __name__ == '__main__':
     # Save best model class
     save_best_model = SaveBestModel()
 
+    train_epoch_hist = []
+    val_epoch_hist = []
+
     # start the training epochs
     for epoch in range(NUM_EPOCHS):
         print(f"\nEPOCH {epoch+1} of {NUM_EPOCHS}")
@@ -173,8 +177,12 @@ if __name__ == '__main__':
         val_loss = validate(valid_dataloader, model)
 
         # Printing the epoch resume
-        print(f"Epoch #{epoch+1} train loss: {train_loss_hist.value:.3f}")   
+        print(f"Epoch #{epoch+1} train loss: {train_loss_hist.value:.3f}")
+        train_epoch_hist.append(round(train_loss_hist.value, 4))
+
         print(f"Epoch #{epoch+1} validation loss: {val_loss_hist.value:.3f}")   
+        val_epoch_hist.append(round(val_loss_hist.value,4))
+        
         end = time.time()
         print(f"Took {((end - start) / 60):.3f} minutes for epoch {epoch}")
 
@@ -189,3 +197,9 @@ if __name__ == '__main__':
         
         # sleep for 5 seconds after each epoch
         time.sleep(5)
+    
+    with open("outputs/train_history", "wb") as fp:  
+        pickle.dump(train_epoch_hist, fp)
+
+    with open("outputs/valid_history", "wb") as fp:   
+        pickle.dump(val_epoch_hist, fp)
