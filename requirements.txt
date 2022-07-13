@@ -1,3 +1,0 @@
-albumentations == 1.2.0
-roboflow
-pytest-shutil
