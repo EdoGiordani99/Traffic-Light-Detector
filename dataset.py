@@ -134,37 +134,3 @@ def build_valid_dataloader(valid_dataset, num_workers=0):
         collate_fn=collate_fn
     )
     return valid_dataloader
-
-
-# execute datasets.py using Python command from Terminal...
-# ... to visualize sample images
-# USAGE: python datasets.py
-if __name__ == '__main__':
-    # sanity check of the Dataset pipeline with sample visualization
-    dataset = CustomDataset(
-        TRAIN_DIR, RESIZE_TO, RESIZE_TO, CLASSES
-    )
-    print(f"Number of training images: {len(dataset)}")
-
-    # function to visualize a single sample
-    def visualize_sample(image, target):
-        for box_num in range(len(target['boxes'])):
-            box = target['boxes'][box_num]
-            label = CLASSES[target['labels'][box_num]]
-            cv2.rectangle(
-                image,
-                (int(box[0]), int(box[1])), (int(box[2]), int(box[3])),
-                (0, 255, 0), 2
-            )
-            cv2.putText(
-                image, label, (int(box[0]), int(box[1] - 5)),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2
-            )
-        cv2.imshow('Image', image)
-        cv2.waitKey(0)
-
-
-    NUM_SAMPLES_TO_VISUALIZE = 5
-    for i in range(NUM_SAMPLES_TO_VISUALIZE):
-        image, target = dataset[i]
-        visualize_sample(image, target)
