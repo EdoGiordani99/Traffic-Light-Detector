@@ -6,9 +6,7 @@ In this project a **traffic light detector** will be implemented. After the dete
 ## About the repository
 In this repository I reported all the codes I used to build and train the Faster RCNN model and for the Yolo V5 fine tuning. All the functions are written according to the PyTorch framework. 
 
-Due to limited computational resourses of my laptop I used the Colab Notebook for training and evaluation phase. 
-
-All the notebooks can be found in the *Colab_Notebooks* folder. 
+Due to limited computational resourses of my laptop I used the Colab Notebook for training and evaluation phase. All the notebooks can be found in the *Colab_Notebooks* folder. 
 
 
 
