@@ -3,6 +3,15 @@ Autonomous driving is increasingly becoming a reality common to all of us thanks
 
 In this project a **traffic light detector** will be implemented. After the detection a classification on the type and color of the light will be done. Finally the network will be able to detect and distinguish 7 different classes of traffic lights: red, green, yellow lights for both cars and pedestrian  and finally the 'unknown' class (for all the traffic lights that are identifiable but we cannot see their color). 
 
+## About the repository
+In this repository I reported all the codes I used to build and train the Faster RCNN model and for the Yolo V5 fine tuning. All the functions are written according to the PyTorch framework. 
+
+Due to limited computational resourses of my laptop I used the Colab Notebook for training and evaluation phase. 
+
+All the notebooks can be found in the *Colab_Notebooks* folder. 
+
+
+
 ## Base Idea
 The very first intuition is the one adopted in the FasterRCNN algorithm which is a lighter and faster version of Fast RCNN. This faster system should be great since it will allow us to use it in embedding systems. A possible approach to the algorithm I will implement is the following:
 - **Feature extraction**: a CNN will be used to extract the main features of the image. 
