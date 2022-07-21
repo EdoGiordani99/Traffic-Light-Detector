@@ -35,7 +35,7 @@ The very first intuition is the one adopted in the FasterRCNN algorithm which is
 To compare the Faster RCNN model with a newest one, I also decided to do a finetuning of a Yolo V5 algorithm. 
 
 ## Dataset
-The dataset I will use was collected by myself, taking pictures of traffic lights all over my city using a high resolution camera. The images were then appropriately cropped and annotated through the ** RoboFlow ** framework. The final augmented dataset consists of:
+The dataset I will use was collected by myself, taking pictures of traffic lights all over my city using a high resolution camera. The images were then appropriately cropped and annotated through the **RoboFlow** framework. The final augmented dataset consists of:
 - 144 training images
 - 35 validation images
 - 25 test images
